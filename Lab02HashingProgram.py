@@ -48,7 +48,7 @@ def validate_hash():
   with open("hash_table.json", "r") as f:
         stored_hashes = json.load(f)
   # get the current directory
-  current_files = []
+  current_files_found = []
   for filepath, stored_hash in stored_hashes.items():
         if os.path.exists(filepath):
             current_files_found.append(filepath)
@@ -77,7 +77,7 @@ def main():
   
     if choice == '1':
       generate_table()
-    elif choic == '2':
+    elif choice == '2':
       validate_hash()
     else:
       print("Option not available.")
