@@ -1,7 +1,8 @@
 import hashlib
 import os
 import json
-
+#This code was produced with all of the documentation I have in comments throughout the script 
+#as well as the use of AI to help me better my understanding of the concepts and implementation
 
 def hash_file(file_path):
   """In the hashlib use sha256 to calculate the sha257 hash files context with security."""
