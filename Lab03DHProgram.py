@@ -48,10 +48,10 @@ class SecurePRNG:
       self.state = hashlib.sha256(block).digest()
     return output[:n_bytes]
       
-  def xor_crypt(data, prng):
-    # TODO: Implement Simple XOR stream cipher logic.
-    keystream = prng.generate(len(data))
-    return bytes([a ^ b for a, b in zip(data, keystream)])
+def xor_crypt(data, prng):
+  # TODO: Implement Simple XOR stream cipher logic.
+  keystream = prng.generate(len(data))
+  return bytes([a ^ b for a, b in zip(data, keystream)])
     
 # --- PART B: COMMUNICATION PROTOCOL ---
 class Entity:
