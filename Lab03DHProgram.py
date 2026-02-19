@@ -208,5 +208,6 @@ def main():
 
   if b"3am" in final_message:
     print("\n[DANGER] MITM SUCCESS: Mallory used her private key (m) to decrypt and re-encrypt.")
+    
 if __name__ == "__main__":
     main()
