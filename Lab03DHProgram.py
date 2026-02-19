@@ -51,7 +51,7 @@ class SecurePRNG:
   def xor_crypt(data, prng):
     # TODO: Implement Simple XOR stream cipher logic.
     keystream = prng.generate(len(data))
-    return bytes([b ^ k for b, k in zip(data, keystream)])
+    return bytes([a ^ b for a, b in zip(data, keystream)])
     
 # --- PART B: COMMUNICATION PROTOCOL ---
 class Entity:
