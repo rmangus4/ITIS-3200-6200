@@ -89,6 +89,7 @@ class Network:
 class Mallory:
   def __init__(self):
     self.private_key = secrets.randbelow(P)
+    self.public_key = pow(G, self.private_key, P)
     self.public_hex = hex(self.public_key)
     
     # Mallory maintains TWO sessions
