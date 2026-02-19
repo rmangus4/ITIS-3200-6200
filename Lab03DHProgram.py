@@ -68,7 +68,7 @@ class Entity:
   # TODO: calculate and initialize shared secret with SecurePRNG
   def establish_session(self, partner_pub_hex):
     partner_pub = int(partner_pub_hex, 16)
-    shared_secret = pow(partner_pub, self.private_key, p)
+    shared_secret = pow(partner_pub, self.private_key, P)
     self.session_prng = SecurePRNG(shared_secret)
     
 # --- DO NOT MODIFY THIS CLASS --- #
