@@ -101,7 +101,7 @@ class Mallory:
     # 1. Implement Logic for Key Exchange Interception
     if isinstance(payload, str) and payload.startswith("0x"):
       remote_pub = int(payload, 16)
-      my_shared_secret = pow(remote_pub, self.private_key, P)
+      shared_secret = pow(remote_pub, self.private_key, P)
       # TODO: If the sender is alice, generate a session PRNG with Alice.
       if sender == "Alice":
         self.alice_prng = SecurePRNG(shared_secret)
