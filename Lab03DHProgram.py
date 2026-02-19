@@ -36,8 +36,7 @@ class SecurePRNG:
   
   def __init__(self, seed_int):
     # TODO: Initalize the SecurePRNG with the shared secret (seed_int) calculated from Diffie-Hellman key exchange.
-    seed_bytes = str(seed_int).encode()
-    self.state = hashlib.sha256(seed_bytes).digest()
+    self.state = hashlib.sha256(str(seed_int).encode()).digest()
   def generate(self, n_bytes):
     # TODO: Generates n bytes while ensuring Rollback Resistance.
     output = b""
@@ -59,8 +58,8 @@ class Entity:
   # TODO: Calculate public and private keys with global P and G.
   def __init__(self, name):
     self.name = name
-    self.private_key =
-    self.public_key =
+    self.private_key = secrets.randbelow(P - 4) + 2
+    self.public_key = pow(G, self.private_key, P)
     self.session_prng = None
     
   def get_public_hex(self):
